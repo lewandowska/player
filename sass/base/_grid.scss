@@ -1,0 +1,35 @@
+.col-1-of-4 {
+	width: calc(25% - 20px);
+	margin-left: 10px;
+	margin-right: 10px;
+	display: flex;
+	flex-direction: column;
+}
+.col-2-of-4 {
+	width: calc(50% - 20px);
+	margin-left: 10px;
+	margin-right: 10px;
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+}
+.col-3-of-4 {
+	width: calc(75% - 20px);
+	margin-left: 10px;
+	margin-right: 10px;
+	display: flex;
+	flex-direction: column;
+}
+.col-4-of-4 {
+	width: calc(100% - 20px);
+	margin-left: 10px;
+	margin-right: 10px;
+	display: flex;
+	flex-direction: column;
+}
+.content {
+    position: relative;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+}

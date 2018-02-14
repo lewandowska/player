@@ -1,0 +1,12 @@
+.back-button {
+	&:after {
+		content: '';
+		width: 2em;
+		height: 2em;
+		background-image: url('../img/back_ico.svg');
+		background-repeat: no-repeat;
+		background-size: contain;
+	    background-position: center;
+	    display: inline-block;
+	}
+}

@@ -1,0 +1,47 @@
+.navigation {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2em;
+	.burger {
+		&:after {
+			content: '';
+			width: 2em;
+			height: 2em;
+			background-image: url('../img/more_ico.svg');
+			background-repeat: no-repeat;
+			background-size: contain;
+		    background-position: center;
+		    display: inline-block;
+		}
+	}
+	.about-song {
+		text-align: center;
+	}
+}
+.navigation-bottom {
+	background-color: white;
+	padding: 2em;
+	display: flex;
+	align-items: center;
+	.bottom-burger {
+		margin-right: 2em;
+		&:after {
+			content: '';
+			width: 2em;
+			height: 2em;
+			background-image: url('../img/playlist_ico.svg');
+			background-repeat: no-repeat;
+			background-size: contain;
+		    background-position: center;
+		    display: inline-block;
+		}
+	}
+	.uppercase {
+		text-align: left;
+		margin-bottom: 0;
+	}
+	.song-duration {
+		color: $lightGray;
+	}
+}

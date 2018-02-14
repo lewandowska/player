@@ -1,0 +1,13 @@
+.controls {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 2em;
+}
+.progress-bar {
+	margin: 2em;
+	color: $lightGray;
+	input {
+		width: 80%;
+	}
+}
