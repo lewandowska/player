@@ -85,7 +85,7 @@ jQuery(function ($) {
     song; // The p5 sound object
 
 	// Load our song
-	document.getElementById("play").onclick = function(event) {
+	$('#play').click(function () {
 	  
 	        if(typeof song != "undefined") { // Catch already playing songs
 	            song.disconnect();
@@ -96,7 +96,7 @@ jQuery(function ($) {
 	        song = loadSound('img/audio1.mp3');
 	        loader.classList.add("loading");
 	    
-	}
+	});
 
 	var canvas;
 	function setup() { // Setup p5.js
