@@ -2,12 +2,48 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 2em;
+	margin: 2em 2em 0;
 }
-.progress-bar {
-	margin: 2em;
-	color: $lightGray;
-	input {
-		width: 80%;
+.progress-bar-container {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 2em;
+   	color: $lightGray;
+	.progress-bar {
+		margin: 2em;
+		height: 2px;
+	    background: black;
+	    position: relative;
+	    width: 100%;
+	    span {
+	    	display: inline-block;
+	    	width: 20%;
+	    	height: 5px;
+	    	position: absolute;
+		    top: 50%;
+		    transform: translateY(-50%);
+		    background-color: $lightGray;
+	    
+	    }
+	}
+}
+.play {
+	.active { 
+		opacity: 0;
+		display: none;
+	}
+	.inactive {
+		opacity: 1;
+	}
+	&.active {
+		.active {
+			opacity: 1;
+			display: block;
+		}
+		.inactive {
+			opacity: 0;
+			display: none;
+		}
 	}
 }

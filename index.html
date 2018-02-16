@@ -18,39 +18,60 @@
         <script src="js/main.js"></script>
     </head>
     <body>
-        <main class="app" data-aos="zoom-in">
+        <main class="app" data-aos="slide-down">
             <div class="navigation">
                 <a href="" class="back-button"></a>
                 <div class="about-song">
                     <p class="uppercase">Album</p>
                     <p class="album-title"> Unreleased</p>
                 </div>
-                <a href="" class="burger"></a>
+                <span class="burger"></span>
+                <div class="side-menu">
+                    <img src="img/cover.png" class="cover-small"> 
+                    <h2 class="song-title">Self conscius</h2>
+                    <h3 class="uppercase artist">Kanye West</h3>
+                    <div class="divider"><img src="img/divider.svg"/ alt="divider"></div>
+                    <ul>
+                        <li><a href="#">Add to playlist</a></li>
+                        <li><a href="#">Show album</a></li>
+                        <li><a href="#">Share with friends</a></li>
+                    </ul>
+                </div>
             </div>
             <div class="slider">
                 <div class="slide">
-                    <img src="img/cover-1.png" class="cover">
+                        <div class="cover-container">
+                            <img src="img/cover-1.png" class="cover">
+                        </div>
                         <audio data-duration="10" class="audio-avalanche" src="img/audio1.mp3" type="audio/mpeg"> 
                          Your browser does not support the audio tag!
                         </audio>
+                        <h2 class="song-title">Self conscius</h2>
+                        <h3 class="uppercase artist">Kanye West</h3>
                 </div>
                 <div class="slide">
-                    <img src="img/unreleased_cover.png" class="cover">
-                       <audio data-duration="10" class="audio-dont-look-down" src="img/audio2.mp3" type="audio/mpeg"> 
-                         Your browser does not support the audio tag!
-                        </audio>
+                    <div class="cover-container">
+                        <img src="img/unreleased_cover.png" class="cover">
+                    </div>
+                   <audio data-duration="10" class="audio-dont-look-down" src="img/audio2.mp3" type="audio/mpeg"> 
+                     Your browser does not support the audio tag!
+                    </audio>
+                    <h2 class="song-title">dada</h2>
+                    <h3 class="uppercase artist">Kanye West</h3>
 
                 </div>
                 <div class="slide">
-                    <img src="img/cover.png" class="cover"> 
+                    <div class="cover-container">
+                        <img src="img/cover.png" class="cover"> 
+                    </div>
                     <audio data-duration="10" class="audio-the-nights" src="img/audio3.mp3"> 
-                 Your browser does not support the audio tag!
-                </audio>
+                     Your browser does not support the audio tag!
+                    </audio>
+                    <h2 class="song-title">test</h2>
+                    <h3 class="uppercase artist">Kanye West</h3>
 
                 </div>
             </div>
-            <h2 class="song-title">Self conscius</h2>
-            <h3 class="uppercase">Kanye West</h3>
             <div class="controls">
                 <a href="#" class="icon-shuffle">
                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
@@ -73,7 +94,7 @@
                       <path id="shuffle_ico" class="cls-1" d="M584.225,790.988a0.322,0.322,0,0,1-.318-0.322v-2.639l-0.4-.02a10.1,10.1,0,0,1-9.032-6.853l-1.89-5.653a7.883,7.883,0,0,0-7.49-5.388H564.06a1.069,1.069,0,1,1,0-2.137h1.03a10.021,10.021,0,0,1,9.5,6.875l1.891,5.653a7.86,7.86,0,0,0,6.978,5.365l0.451,0.029V783.21a0.323,0.323,0,0,1,.323-0.323h0a0.332,0.332,0,0,1,.241.09l4.248,3.534,0.178,0.2a0.336,0.336,0,0,1,.105.244,0.33,0.33,0,0,1-.1.227l-4.459,3.707A0.341,0.341,0,0,1,584.225,790.988Zm0-17.893a0.322,0.322,0,0,1-.32-0.323v-2.689l-0.453.031a7.944,7.944,0,0,0-4.7,1.97,1.07,1.07,0,0,1-.706.266h0a1.092,1.092,0,0,1-.849-0.368,1.066,1.066,0,0,1,.106-1.507,10.2,10.2,0,0,1,6.206-2.5l0.4-.02v-2.639a0.285,0.285,0,0,1,.5-0.224l4.519,3.762a0.324,0.324,0,0,1-.023.444l-4.459,3.708A0.334,0.334,0,0,1,584.227,773.1ZM564.06,788.006a1.068,1.068,0,1,1,0-2.136h1.03a7.937,7.937,0,0,0,4.875-1.68l0.064-.046a1.072,1.072,0,0,1,1.457.161,1.067,1.067,0,0,1-.119,1.506,10.106,10.106,0,0,1-6.277,2.195h-1.03Z" transform="translate(-563 -765)"/>
                     </svg>
                 </a>
-                <a href="#" id="previous">
+                <a href="#" class="previous">
                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="26" viewBox="0 0 30 26">
                       <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
                     <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c138 79.159824, 2016/09/14-01:09:01        ">
@@ -95,8 +116,10 @@
                       <path id="previous_ico" class="cls-1" d="M665.129,765A4.895,4.895,0,0,1,670,769.9V786.1a4.851,4.851,0,0,1-7.441,4.15l-7.528-4.718a1.168,1.168,0,0,1,.615-2.157,1.148,1.148,0,0,1,.613.177l7.529,4.718a2.544,2.544,0,0,0,3.89-2.17V769.9a2.535,2.535,0,0,0-3.89-2.17l-12.933,8.1a2.565,2.565,0,0,0,0,4.339,1.171,1.171,0,0,1,.371,1.608,1.158,1.158,0,0,1-1.6.373,4.9,4.9,0,0,1,0-8.3l12.932-8.105A4.848,4.848,0,0,1,665.129,765Zm-23.8,0a1.328,1.328,0,0,1,1.328,1.328v23.344a1.328,1.328,0,0,1-2.656,0V766.328A1.329,1.329,0,0,1,641.328,765Z" transform="translate(-640 -765)"/>
                     </svg>
                 </a>
-                <a href="#" class="play"><img src="img/Play_inactive.png"/></a>
-                <a href="#" id="next">
+                <a href="#" class="play">
+                    <img class="inactive" src="img/Play_inactive.png"/>
+                    <img class="active" src="img/Play_active.png"/></a>
+                <a href="#" class="next">
                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="26" viewBox="0 0 30 26">
                     <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
                     <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c138 79.159824, 2016/09/14-01:09:01        ">
@@ -137,16 +160,69 @@
                     </svg>
                 </a>
             </div>
-            <div class="progress-bar">
-                <label for="fader">0:00</label>
-                <input type="range" min="0" max="100" value="40" step="1">
-                <output for="fader" class="duration"></output>
+            <div class="progress-bar-container">
+                <span class="start-time">0:00</span>
+                <div class="progress-bar">
+                    <span></span>
+                </div>
+                <span class="duration">1:90</span>
             </div>
             <div class="navigation-bottom">
                 <a href="#" class="bottom-burger"></a>
-                <div class="next-song">
-                     <p class="uppercase">Next</p>
-                     <p class="next-song-title">Livin' In a Movie <span class="song-duration">........................................ 3:27</span></p>
+                <div class="next-song slider-nav">
+                    <div class="slider-nav-slide">
+                         <p class="uppercase">Next</p>
+                         <p class="next-song-title">Livin' In a Movie <span class="song-duration">........................................ 3:27</span></p>
+                    </div>
+                </div>
+                <div class="track-list">
+                    <div class="header">
+                        <div class="header-container">
+                            <a href="#" class="back-button back-button-track-list"></a>
+                            <div class="current-song">
+                                <span class="current-song-title">Self conscius</span>
+                                <span class="current-song-artist uppercase">Kanye West</span>
+                            </div>
+                            <a href="#" class="play"><img src="img/Play_active.png"/></a>
+                        </div>
+                    </div>
+                    <ol>
+                        <li>Livin' In a Movie 
+                            <span class="song-duration">........................................ 3:27</span>
+                        </li>
+                        <li>Dark Fantasy 
+                            <span class="song-duration">........................................ 5:12</span>
+                        </li>
+                        <li>All of the lights 
+                            <span class="song-duration">........................................ 2:54</span>
+                        </li>
+                        <li>So Appalled
+                            <span class="song-duration">........................................ 3:51</span>
+                        </li>
+                        <li>Devil in a New Dress
+                            <span class="song-duration">........................................ 4:51</span>
+                        </li>
+                        <li>Runaway 
+                            <span class="song-duration">........................................ 3:46</span>
+                        </li>
+                        <li>Hell of a Life
+                            <span class="song-duration">........................................ 3:09</span>
+                        </li>
+                        <li>Blame  Game
+                            <span class="song-duration">........................................ 7:02</span>
+                        </li>
+                        <li>Lost in The World
+                            <span class="song-duration">........................................ 3:37</span>
+                        </li>
+                        <li>Who Will Survive in America
+                            <span class="song-duration">........................................ 3:11</span>
+                        </li>
+                        <li>Dark Fantasy
+                            <span class="song-duration">........................................ 3:51</span>
+                        </li>
+                    </ol>
+                    <a href="#" class="button-shuffle-play"> Shuffle play
+                    </a>
                 </div>
             </div>
         </main>

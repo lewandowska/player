@@ -4,6 +4,8 @@
 	align-items: center;
 	padding: 2em;
 	.burger {
+		cursor: pointer;
+		z-index: 3;
 		&:after {
 			content: '';
 			width: 2em;
@@ -18,12 +20,53 @@
 	.about-song {
 		text-align: center;
 	}
+	.side-menu {
+		background-color: rgba(27,27,27,0.96);
+	    position: absolute;
+	    top: 0;
+	    bottom: 0;
+	    z-index: 1;
+	    width: 100%;
+	    text-align: center;
+	    transition: .5s ease;
+	    opacity: 0;
+    	left: 100%;
+		.cover-small {
+			margin-top: 9em;
+			transform: scale(0.7, 0.7);
+		}
+		 ul {
+    		li {
+    			color: white;
+    			margin-bottom: 1em;
+    			a {
+    				text-decoration: none;
+    				font-size: 24px;
+    			}
+    		}
+    	}
+
+	}
+	&.active {
+		.side-menu {
+			left: 0%;
+    		opacity: 1;
+		}
+	}
 }
+
 .navigation-bottom {
 	background-color: white;
 	padding: 2em;
 	display: flex;
-	align-items: center;
+    position: absolute;
+    top: calc(100% - 90px);
+    width: 100%;
+    height: 100%;
+    overflow-y: visible;
+    z-index: 4;
+    transition: top 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
 	.bottom-burger {
 		margin-right: 2em;
 		&:after {
@@ -43,5 +86,25 @@
 	}
 	.song-duration {
 		color: $lightGray;
+		float: right;
 	}
+	.back-button,
+	.header,
+	.track-list {
+		display: none;
+	}
+	&.active {
+        top: 0;
+        overflow: auto;
+        height: 100%;
+        align-items: flex-start;
+        width: 100%;
+        padding: 0;
+        .next-song {
+        	display: none;
+        }
+        .bottom-burger {
+        	display: none;
+        }
+    }
 }

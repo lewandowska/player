@@ -2,26 +2,91 @@
 	display: flex!important;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     position: relative;
 	width: 300px;
 	height: 300px;
 	
 	img {
 		margin: 0 auto;
-		width: 200px;
-		height: 200px;
-		transform: scale(0.9);
-		transition: transform 0.5s linear;
+		width: 150px;
+		height: 150px;
+	}
+	h2 {
+		margin-top: 1em;
+	}
+	h2,
+	h3 {
+		opacity: 0;
 	}
 
 }
+.slide {
+    transform: scale(0.7, 0.7);
+    transition: all 1s;
+}
+
+.slide.slick-active,
+.slide.slick-center {
+    transform: scale(1.0, 1.0);
+    transition: all 1s;
+}
 
 .slick-current {
-	img {
-		transform: scale(1.2);
-		transition: transform 0.5s linear;
+	.cover-container {
+		position: relative;
+		&:before {
+			content: '';
+			background: black;
+			width: 4em;
+			height: 4em;
+			position: absolute;
+			display: inline-block;
+			border-radius: 2em;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			z-index: 1;
+
+		}
+		&:after {
+			content: '';
+			background-image: url('../img/daft_logo.svg');
+			bakcground-size: cover;
+			width: 2em;
+			height: 2em;
+			position: absolute;
+			display: inline-block;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			z-index: 2;
+
+		}
+	}
+	h2,
+	h3 {
+		opacity: 1;
+		transition: opacity .5s linear;
 	}
 }
 .slick-slide {
 	outline: none !important;
+}
+.app {
+	&.active {
+		.slick-current { 
+			.cover-container {
+				animation: rotation 2s infinite linear;
+			}
+		}
+	}
+}
+@keyframes rotation {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(359deg);
+		}
 }

@@ -24,8 +24,8 @@ jQuery(function ($) {
 		  	centerMode: true,
 		  	slidesToShow: 1,
 		  	variableWidth: true,
-		  	prevArrow: $('#previous'),
-		  	nextArrow: $('#next'),
+		  	prevArrow: $('.previous'),
+		  	nextArrow: $('.next'),
 		});
 	    slider.on('beforeChange', function(event, slick, currentSlide, nextSlide ){
 
@@ -39,9 +39,41 @@ jQuery(function ($) {
 	        });
 
 	        var audioDuration = $('.slide').eq(nextSlide).find('audio').data("duration");
+	        var nextSong = $('.slide').eq(nextSlide).find('.song-title').text();
 	        $('.duration').html(audioDuration);
+	        $('.next-song-title').text(nextSong);
 
 	    })
 	};
 	setDataTimeAttr();
+	
+	var bottomBurger = $('.bottom-burger');
+	var burger = $('.burger');
+	var backButton = $('.back-button-track-list');
+	var playButton = $('.play');
+
+	bottomBurger.click(function () {
+	    var $this = $(this);
+	    $this.parent().toggleClass('active');
+	});
+
+	burger.click(function () {
+	    var $this = $(this);
+	    $this.parent().toggleClass('active');
+	});
+
+
+	backButton .click(function () {
+	    var $this = $(this);
+	    $this.closest('.navigation-bottom').removeClass('active');
+	});
+
+	
+	playButton .click(function () {
+	    var $this = $(this);
+	    var main = $('.app');
+	    $this.toggleClass('active');
+	    main.toggleClass('active');
+	});
+
 });

@@ -10,3 +10,17 @@
 	    display: inline-block;
 	}
 }
+.button-shuffle-play {
+	background-color: $green;
+	width: 85%;
+	color: white;
+	display: block;
+    border-radius: 1.25em;
+    padding: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 0 auto;
+    z-index: 2;
+    position: relative;
+}
