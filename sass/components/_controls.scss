@@ -2,7 +2,15 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 2em 2em 0;
+	margin: 0  2em 0;
+	a {
+		&:hover {
+			svg {
+				stroke: $green;
+				transition: 0.5s linear;
+			}
+		}
+	}
 }
 .progress-bar-container {
 	display: flex;
@@ -35,6 +43,7 @@
 	}
 	.inactive {
 		opacity: 1;
+		display: block;
 	}
 	&.active {
 		.active {
@@ -45,5 +54,9 @@
 			opacity: 0;
 			display: none;
 		}
+	}
+	img {
+		width: 8em;
+    	height: 8em;
 	}
 }

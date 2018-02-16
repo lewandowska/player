@@ -13,28 +13,34 @@
 		width: 100%;
 		display: block;
 		.header {
-
 			display: flex;
 			&:after {
 				content: '';
-				background: rgba(27,27,27,0.96) url('../img/bg_image.jpg');
+				background:  url('../img/bg_image.jpg');
 				background-repeat: no-repeat;
 				background-size: contain;
 				background-position: center;
 				background-size: cover;
-				background-blend-mode: overlay;
-	    		filter: grayscale(1);
 			    width: 100%;
 			    height: 130px;
 			    position: absolute;
 			    z-index: -1;
 			}
+			.track-list-overlay {
+				content: '';
+				position: absolute;
+				background-color: rgba(27, 27, 27, 0.96);
+			    width: 100%;
+			    height: 130px;
+			    z-index: 10;
+			}
 			.header-container {
-				padding: 2em 2em 0;
+				padding: 1em 2em 0;
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
 				width: 100%;
+				z-index: 20;
 			}
 		}
 		.current-song {
@@ -58,13 +64,25 @@
 			padding: 2em;
 			li {
 				display: list-item;
+				overflow: hidden;
 				counter-increment: step-counter;
 				margin-bottom: 1em;
 				font-size: 24px;
+				.title {
+					background: white;
+					padding-right: 0.5em;
+					padding-left: 1em;
+				}
+				.item-number {
+					color: $lightGray;
+					background: white;
+				}
 				&:before {
-					content: counter(step-counter)'.';
-				    margin-right: 0.5em;
-				    color: $lightGray;
+					float: left;
+  				  	width: 0;
+    				white-space: nowrap;
+    				color: $lightGray;
+   				 	content: ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . ";
 				}
 			}
 		}

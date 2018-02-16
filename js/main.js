@@ -3,7 +3,7 @@ jQuery(function ($) {
 
     function setDataTimeAttr() {
         var once = 0;
-        videoLenght = $('audio').length;
+        audioLenght = $('audio').length;
 
         $('audio').each(function () {
             var audio = $(this)[0];
@@ -12,7 +12,7 @@ jQuery(function ($) {
             	var seconds = parseInt(audio.duration % 60);
                 $(audio).attr("data-duration",minutes+":"+seconds);
 
-                if(once == (videoLenght - 1)) {
+                if(once == (audioLenght - 1)) {
                     initSlickSlider();  
                 }
                 once++;
@@ -49,7 +49,7 @@ jQuery(function ($) {
 	
 	var bottomBurger = $('.bottom-burger');
 	var burger = $('.burger');
-	var backButton = $('.back-button-track-list');
+	var backButton = $('.btn-hide');
 	var playButton = $('.play');
 
 	bottomBurger.click(function () {
@@ -76,4 +76,62 @@ jQuery(function ($) {
 	    main.toggleClass('active');
 	});
 
+
+
+
+
+	var fft, // Allow us to analyze the song
+    numBars = 1024, // The number of bars to use; power of 2 from 16 to 1024
+    song; // The p5 sound object
+
+	// Load our song
+	document.getElementById("play").onclick = function(event) {
+	  
+	        if(typeof song != "undefined") { // Catch already playing songs
+	            song.disconnect();
+	            song.stop();
+	        }
+	        
+	        // Load our new song
+	        song = loadSound('img/audio1.mp3');
+	        loader.classList.add("loading");
+	    
+	}
+
+	var canvas;
+	function setup() { // Setup p5.js
+	    canvas = createCanvas(windowWidth, windowHeight);
+	}
+
+	function draw() {
+	    background(51);
+	    
+	    if(typeof song != "undefined" 
+	       && song.isLoaded() 
+	       && !song.isPlaying()) { // Do once
+	        loader.classList.remove("loading");
+	        
+	        song.play();
+	        song.setVolume(0.5);
+
+	        fft = new p5.FFT();
+	        fft.waveform(numBars);
+	        fft.smooth(0.85);
+	    }
+	    
+	    if(typeof fft != "undefined") {
+	        var spectrum = fft.analyze();
+	        noStroke();
+	        fill("rgb(0, 255, 0)");
+	        for(var i = 0; i < numBars; i++) {
+	            var x = map(i, 0, numBars, 0, width);
+	            var h = -height + map(spectrum[i], 0, 255, height, 0);
+	            rect(x, height, width / numBars, h);
+	        }
+	    }
+	}
+
+	function windowResized() {
+	  resizeCanvas(windowWidth, windowHeight);
+	}
 });

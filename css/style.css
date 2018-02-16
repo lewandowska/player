@@ -107,6 +107,11 @@ h4 {
   margin-bottom: 0.5em;
 }
 
+.dots {
+  margin-bottom: 0.5em;
+  background-image: url("../img/divider.svg");
+}
+
 .artist {
   margin-bottom: 0.5em;
 }
@@ -137,6 +142,17 @@ h4 {
   position: relative;
 }
 
+.btn-hide {
+  position: relative;
+  width: 100%;
+}
+.btn-hide img {
+  display: block;
+  margin: 1em auto;
+  width: 2em;
+  height: 2em;
+}
+
 .app {
   width: 570px;
   height: 800px;
@@ -144,6 +160,44 @@ h4 {
   margin: 0 auto;
   overflow: hidden;
   position: relative;
+}
+.app:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, transparent), color-stop(50%, #1b1b1b));
+  background: linear-gradient(to bottom, transparent 20%, #1b1b1b 50%);
+}
+.app:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: -3;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  background: url("../img/bg_image.jpg") no-repeat;
+}
+.app .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: -2;
+  background-color: rgba(27, 27, 27, 0.96);
 }
 
 .navigation {
@@ -242,6 +296,7 @@ h4 {
 .navigation-bottom .song-duration {
   color: #9a9b9b;
   float: right;
+  background: white;
 }
 .navigation-bottom .back-button,
 .navigation-bottom .header,
@@ -285,11 +340,11 @@ h4 {
 }
 .slick-slide img {
   margin: 0 auto;
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
 }
 .slick-slide h2 {
-  margin-top: 1em;
+  margin-top: 0.5em;
 }
 .slick-slide h2,
 .slick-slide h3 {
@@ -334,6 +389,7 @@ h4 {
 .slick-current .cover-container:after {
   content: '';
   background-image: url("../img/daft_logo.svg");
+  background-repeat: no-repeat;
   bakcground-size: cover;
   width: 2em;
   height: 2em;
@@ -358,8 +414,8 @@ h4 {
 }
 
 .app.active .slick-current .cover-container {
-  -webkit-animation: rotation 2s infinite linear;
-  animation: rotation 2s infinite linear;
+  -webkit-animation: rotation 5s infinite linear;
+  animation: rotation 5s infinite linear;
 }
 
 @-webkit-keyframes rotation {
@@ -383,6 +439,12 @@ h4 {
     transform: rotate(359deg);
   }
 }
+input {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
 .controls {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -393,7 +455,12 @@ h4 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin: 2em 2em 0;
+  margin: 0  2em 0;
+}
+.controls a:hover svg {
+  stroke: #0fd65a;
+  -webkit-transition: 0.5s linear;
+  transition: 0.5s linear;
 }
 
 .progress-bar-container {
@@ -434,6 +501,7 @@ h4 {
 }
 .play .inactive {
   opacity: 1;
+  display: block;
 }
 .play.active .active {
   opacity: 1;
@@ -442,6 +510,10 @@ h4 {
 .play.active .inactive {
   opacity: 0;
   display: none;
+}
+.play img {
+  width: 8em;
+  height: 8em;
 }
 
 .navigation-bottom.active:before {
@@ -466,21 +538,26 @@ h4 {
 }
 .navigation-bottom.active .track-list .header:after {
   content: '';
-  background: rgba(27, 27, 27, 0.96) url("../img/bg_image.jpg");
+  background: url("../img/bg_image.jpg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   background-size: cover;
-  background-blend-mode: overlay;
-  -webkit-filter: grayscale(1);
-  filter: grayscale(1);
   width: 100%;
   height: 130px;
   position: absolute;
   z-index: -1;
 }
+.navigation-bottom.active .track-list .header .track-list-overlay {
+  content: '';
+  position: absolute;
+  background-color: rgba(27, 27, 27, 0.96);
+  width: 100%;
+  height: 130px;
+  z-index: 10;
+}
 .navigation-bottom.active .track-list .header .header-container {
-  padding: 2em 2em 0;
+  padding: 1em 2em 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -491,6 +568,7 @@ h4 {
   -ms-flex-align: center;
   align-items: center;
   width: 100%;
+  z-index: 20;
 }
 .navigation-bottom.active .track-list .current-song {
   display: -webkit-box;
@@ -521,14 +599,26 @@ h4 {
 }
 .navigation-bottom.active .track-list ol li {
   display: list-item;
+  overflow: hidden;
   counter-increment: step-counter;
   margin-bottom: 1em;
   font-size: 24px;
 }
-.navigation-bottom.active .track-list ol li:before {
-  content: counter(step-counter) ".";
-  margin-right: 0.5em;
+.navigation-bottom.active .track-list ol li .title {
+  background: white;
+  padding-right: 0.5em;
+  padding-left: 1em;
+}
+.navigation-bottom.active .track-list ol li .item-number {
   color: #9a9b9b;
+  background: white;
+}
+.navigation-bottom.active .track-list ol li:before {
+  float: left;
+  width: 0;
+  white-space: nowrap;
+  color: #9a9b9b;
+  content: ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . ";
 }
 
 * {

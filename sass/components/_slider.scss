@@ -9,11 +9,11 @@
 	
 	img {
 		margin: 0 auto;
-		width: 150px;
-		height: 150px;
+		width: 200px;
+		height: 200px;
 	}
 	h2 {
-		margin-top: 1em;
+		margin-top: 0.5em;
 	}
 	h2,
 	h3 {
@@ -52,6 +52,7 @@
 		&:after {
 			content: '';
 			background-image: url('../img/daft_logo.svg');
+			background-repeat: no-repeat;
 			bakcground-size: cover;
 			width: 2em;
 			height: 2em;
@@ -77,16 +78,21 @@
 	&.active {
 		.slick-current { 
 			.cover-container {
-				animation: rotation 2s infinite linear;
+				animation: rotation 5s infinite linear;
 			}
 		}
 	}
 }
 @keyframes rotation {
-		from {
-			transform: rotate(0deg);
-		}
-		to {
-			transform: rotate(359deg);
-		}
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(359deg);
+	}
+}
+input {
+    position: absolute;
+    top: 15px;
+    left: 15px;
 }
