@@ -44,7 +44,7 @@
                     <div class="cover-container">
                         <img src="img/cover-1.png" class="cover">
                     </div>
-                    <audio data-duration="10" id="audiofile" class="audio-avalanche" src="img/audio1.mp3" type="audio/mpeg"> 
+                    <audio data-duration="10" src="img/audio1.mp3" type="audio/mpeg"> 
                      Your browser does not support the audio tag!
                     </audio>
                     <h2 class="song-title">Self conscius</h2>
@@ -54,7 +54,7 @@
                     <div class="cover-container">
                         <img src="img/unreleased_cover.png" class="cover">
                     </div>
-                   <audio data-duration="10" class="audio-dont-look-down" src="img/audio2.mp3" type="audio/mpeg"> 
+                   <audio data-duration="10" src="img/audio2.mp3" type="audio/mpeg"> 
                      Your browser does not support the audio tag!
                     </audio>
                     <h2 class="song-title">Livin' In a Movie</h2>
@@ -65,7 +65,7 @@
                     <div class="cover-container">
                         <img src="img/cover.png" class="cover"> 
                     </div>
-                    <audio data-duration="10" class="audio-the-nights" src="img/audio3.mp3"> 
+                    <audio data-duration="10" src="img/audio3.mp3"> 
                      Your browser does not support the audio tag!
                     </audio>
                     <h2 class="song-title">All of the lights</h2>
@@ -290,6 +290,7 @@
                 song.play();
             }
         });
+
         document.getElementById("prev").addEventListener('click', function(){
             if ( song.isPlaying() ) { 
                 song.stop();
