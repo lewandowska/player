@@ -21,11 +21,9 @@ function documentReady(fn) {
     }
     p.draw = function(){
  
-
         p.noStroke();
         p.fill("rgb(0, 255, 0)");
         p.clear();    
-        console.log('rysuje');
         var spectrum = fft.analyze();
         var numBars = 1024;
 
@@ -45,6 +43,7 @@ function app() {
     });
 
     var musicController = document.getElementById("play");
+    console.log($('.slick-slider'));
     var songPath = musicController.getAttribute('data-page-music');
     var connected = sessionStorage.getItem('songPlay') ? JSON.parse(sessionStorage.getItem('songPlay')) : false; 
     
