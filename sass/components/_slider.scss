@@ -37,24 +37,21 @@
 		position: relative;
 		&:before {
 			content: '';
-			background: black;
-			border: 2px solid $green;
 			width: 4em;
 			height: 4em;
 			position: absolute;
-			display: inline-block;
-			border-radius: 2em;
 			top: 50%;
 			left: 50%;
+			display: inline-block;
+			border-radius: 4em;
 			transform: translate(-50%,-50%);
 			z-index: 1;
+			background: black;
+			border: 2px solid $green;
 
 		}
 		&:after {
 			content: '';
-			background-image: url('../img/daft_logo.svg');
-			background-repeat: no-repeat;
-			bakcground-size: cover;
 			width: 2em;
 			height: 2em;
 			position: absolute;
@@ -63,6 +60,9 @@
 			left: 50%;
 			transform: translate(-50%,-50%);
 			z-index: 2;
+			background-image: url('../img/daft_logo.svg');
+			background-repeat: no-repeat;
+			bakcground-size: cover;
 
 		}
 	}
@@ -91,9 +91,4 @@
 	to {
 		transform: rotate(359deg);
 	}
-}
-input {
-    position: absolute;
-    top: 15px;
-    left: 15px;
 }

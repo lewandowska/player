@@ -367,25 +367,22 @@ h4 {
 }
 .slick-current .cover-container:before {
   content: '';
-  background: black;
-  border: 2px solid #0fd65a;
   width: 4em;
   height: 4em;
   position: absolute;
-  display: inline-block;
-  border-radius: 2em;
   top: 50%;
   left: 50%;
+  display: inline-block;
+  border-radius: 4em;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   z-index: 1;
+  background: black;
+  border: 2px solid #0fd65a;
 }
 .slick-current .cover-container:after {
   content: '';
-  background-image: url("../img/daft_logo.svg");
-  background-repeat: no-repeat;
-  bakcground-size: cover;
   width: 2em;
   height: 2em;
   position: absolute;
@@ -396,6 +393,9 @@ h4 {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   z-index: 2;
+  background-image: url("../img/daft_logo.svg");
+  background-repeat: no-repeat;
+  bakcground-size: cover;
 }
 .slick-current h2,
 .slick-current h3 {
@@ -434,12 +434,6 @@ h4 {
     transform: rotate(359deg);
   }
 }
-input {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-}
-
 .controls {
   display: -webkit-box;
   display: -ms-flexbox;
