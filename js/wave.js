@@ -82,7 +82,7 @@ function app() {
     });
 
   
-    new p5(sketch);
+    // new p5(sketch);
     
 }
 
