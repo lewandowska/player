@@ -38,6 +38,7 @@
 		&:before {
 			content: '';
 			background: black;
+			border: 2px solid $green;
 			width: 4em;
 			height: 4em;
 			position: absolute;

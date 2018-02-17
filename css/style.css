@@ -374,6 +374,7 @@ h4 {
 .slick-current .cover-container:before {
   content: '';
   background: black;
+  border: 2px solid #0fd65a;
   width: 4em;
   height: 4em;
   position: absolute;
