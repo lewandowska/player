@@ -1,28 +1,29 @@
 .back-button {
+	z-index: 2;
 	&:after {
 		content: '';
 		width: 2em;
 		height: 2em;
+		display: inline-block;
 		background-image: url('../img/back_ico.svg');
 		background-repeat: no-repeat;
 		background-size: contain;
 	    background-position: center;
-	    display: inline-block;
 	}
 }
 .button-shuffle-play {
-	background-color: $green;
-	width: 85%;
-	color: white;
 	display: block;
+	position: relative;
+	width: 85%;
+	margin: 0 auto;
+	padding: 1em;
+	color: white;
+	z-index: 2;
+	background-color: $green;
     border-radius: 1.25em;
-    padding: 1em;
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
-    margin: 0 auto;
-    z-index: 2;
-    position: relative;
 }
 .btn-hide {
 	position: relative;

@@ -2,7 +2,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 0  2em 0;
+	margin: 0 2em 0;
 	a {
 		&:hover {
 			svg {
@@ -21,16 +21,16 @@
 	.progress-bar {
 		margin: 2em;
 		height: 2px;
+		width: 100%;
 	    background: black;
 	    position: relative;
-	    width: 100%;
 	    span {
+	    	position: absolute;
 	    	display: inline-block;
+	    	transform: translateY(-50%);
 	    	width: 20%;
 	    	height: 5px;
-	    	position: absolute;
 		    top: 50%;
-		    transform: translateY(-50%);
 		    background-color: $lightGray;
 	    
 	    }

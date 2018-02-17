@@ -1,10 +1,10 @@
 .app {
+	position: relative;
 	width: 570px;
 	height: 800px;
-	background-color: $gray;
 	margin: 0 auto;
 	overflow: hidden;
-	position: relative;
+	background-color: $gray;
 	&:after {
 		content: '';
 		position: absolute;

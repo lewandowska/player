@@ -56,15 +56,15 @@
 }
 
 .navigation-bottom {
-	background-color: white;
-	padding: 2em;
 	display: flex;
-    position: absolute;
+	position: absolute;
     top: calc(100% - 90px);
-    width: 100%;
+	width: 100%;
     height: 100%;
+	padding: 2em;
     overflow-y: visible;
     z-index: 4;
+    background-color: white;
     transition: top 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
 	.bottom-burger {
@@ -97,10 +97,10 @@
 	}
 	&.active {
         top: 0;
-        overflow: auto;
         height: 100%;
-        align-items: flex-start;
         width: 100%;
+        align-items: flex-start;
+        overflow: auto;
         padding: 0;
         .next-song {
         	display: none;
