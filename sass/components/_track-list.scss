@@ -17,7 +17,7 @@
 			&:after {
 				content: '';
 			    width: 100%;
-			    height: 130px;
+			    height: 110px;
 			    position: absolute;
 			    z-index: -1;
 			    background:  url('../img/bg_image.jpg');
@@ -29,7 +29,7 @@
 				content: '';
 				position: absolute;
 			    width: 100%;
-			    height: 130px;
+			    height: 110px;
 			    z-index: 10;
 			    background-color: rgba(27, 27, 27, 0.96);
 			}
@@ -59,7 +59,7 @@
 			}
 		}
 		ol {
-			padding: 2em;
+			padding: 2em 2em 0;
 			background-color: white;
 			li {
 				display: list-item;

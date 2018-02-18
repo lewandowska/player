@@ -474,10 +474,10 @@ a {
   align-items: center;
   margin: 0 2em 0;
 }
-.controls a:hover svg {
-  stroke: #0fd65a;
-  -webkit-transition: 0.5s linear;
-  transition: 0.5s linear;
+.controls a:hover svg path {
+  fill: #0fd65a;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
 }
 
 .progress-bar-container {
@@ -577,7 +577,7 @@ a {
 .navigation-bottom.active .track-list .header:after {
   content: '';
   width: 100%;
-  height: 130px;
+  height: 110px;
   position: absolute;
   z-index: -1;
   background: url("../img/bg_image.jpg");
@@ -589,7 +589,7 @@ a {
   content: '';
   position: absolute;
   width: 100%;
-  height: 130px;
+  height: 110px;
   z-index: 10;
   background-color: rgba(27, 27, 27, 0.96);
 }
@@ -631,7 +631,7 @@ a {
   height: 6em;
 }
 .navigation-bottom.active .track-list ol {
-  padding: 2em;
+  padding: 2em 2em 0;
   background-color: white;
 }
 .navigation-bottom.active .track-list ol li {
