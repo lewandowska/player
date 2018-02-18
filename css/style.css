@@ -88,7 +88,7 @@ h4 {
   font-size: 36px;
   color: #0fd65a;
   text-align: center;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.25em;
 }
 
 .current-song-title {
@@ -255,13 +255,13 @@ a {
 }
 .navigation .side-menu .cover-small {
   margin-top: 9em;
-  -webkit-transform: scale(0.7, 0.7);
-  -ms-transform: scale(0.7, 0.7);
-  transform: scale(0.7, 0.7);
+  -webkit-transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  transform: scale(0.7);
 }
 .navigation .side-menu ul li {
   color: white;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
 }
 .navigation .side-menu ul li a {
   text-decoration: none;
