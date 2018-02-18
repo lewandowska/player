@@ -10,7 +10,7 @@ jQuery(function ($) {
             audio.addEventListener('loadedmetadata', function() {
             	var minutes = parseInt(audio.duration/ 60, 10);
             	var seconds = parseInt(audio.duration % 60);
-                $(audio).attr("data-duration",minutes+":"+seconds);
+                $(audio).attr("data-duration", minutes+":"+seconds);
 
                 if(once == (audioLenght - 1)) {
                     initSlickSlider();  
@@ -46,7 +46,6 @@ jQuery(function ($) {
 	        $('.next-song-title').text(nextSong);
 
 	        var currentTime = document.getElementById("current-time");
-
 	        var updateCurrentTime = setInterval(function() {
 	        var loadingAnimationDiv = $('.progress-bar-animation');
 			if (currentAudio[0].duration > 0 && !currentAudio[0].paused) {
@@ -60,7 +59,6 @@ jQuery(function ($) {
 				}, 10);
 	    	})
 	};
-	setDataTimeAttr();
 	
 	var bottomBurger = $('.bottom-burger');
 	var burger = $('.burger');
@@ -75,19 +73,15 @@ jQuery(function ($) {
 	   	$(this).parent().toggleClass('active');
 	});
 
-
 	backButton .click(function () {
 	    $(this).closest('.navigation-bottom').removeClass('active');
 	});
-
 	
 	playButton .click(function () {
 	    var main = $('.app');
 	   	$(this).toggleClass('active');
 	    main.toggleClass('active');
 	});
-
-
-
-
+	
+	setDataTimeAttr();
 });
