@@ -1,10 +1,14 @@
 .app {
-	position: relative;
 	width: 570px;
 	height: 800px;
 	margin: 0 auto;
 	overflow: hidden;
 	background-color: $gray;
+	position: absolute;
+    overflow: hidden;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
 	&:after {
 		content: '';
 		position: absolute;

@@ -17,7 +17,7 @@
         <script src="js/main.js"></script>
     </head>
     <body>
-        <main class="app" data-aos="slide-down">
+        <main class="app">
             <div class="navigation">
                 <a href="" class="back-button"></a>
                 <div class="about-song">
@@ -101,7 +101,7 @@
                 <a href="#" class="play" id="play" data-page-music="img/audio1.mp3" class="music-controller">
                     <img class="inactive" src="img/Play_inactive.png"/>
                     <img class="active" src="img/Play_active.png"/></a>
-                <a href="#" class="next">
+                <a href="#" class="next" id="next">
                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="26" viewBox="0 0 30 26">
                     <defs>
                         <style>
@@ -142,8 +142,8 @@
                     <div class="slider-nav-slide">
                          <p class="uppercase">Next</p>
                          <p class="next-song-title">
-                            Livin' In a Movie    .......................................................
-                            <span class="song-duration">  3:27</span>
+                            Livin' In a Movie 
+                            <span class="song-duration">...............................  3:27</span>
                         </p>
                     </div>
                 </div>
@@ -280,10 +280,10 @@
                 song.stop();
             } 
         });
-
-
-        AOS.init({
-            duration: 1200,
+       document.getElementById("next").addEventListener('click', function(){
+            if ( song.isPlaying() ) { 
+                song.stop();
+            } 
         });
 
     </script>

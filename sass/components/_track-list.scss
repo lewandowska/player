@@ -22,7 +22,6 @@
 			    z-index: -1;
 			    background:  url('../img/bg_image.jpg');
 				background-repeat: no-repeat;
-				background-size: contain;
 				background-position: center;
 				background-size: cover;
 			}
@@ -76,6 +75,7 @@
 				.item-number {
 					color: $lightGray;
 					background: white;
+					font-size: 18px;
 				}
 				&:before {
 					float: left;

@@ -108,6 +108,11 @@ h4 {
   margin-bottom: 0.5em;
 }
 
+.next-song-title {
+  font-size: 24px;
+  color: black;
+}
+
 .back-button {
   z-index: 2;
 }
@@ -153,12 +158,18 @@ a {
 }
 
 .app {
-  position: relative;
   width: 570px;
   height: 800px;
   margin: 0 auto;
   overflow: hidden;
   background-color: #1b1b1b;
+  position: absolute;
+  overflow: hidden;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
 }
 .app:after {
   content: '';
@@ -258,8 +269,8 @@ a {
 }
 .navigation .side-menu ul li a:hover {
   color: #0fd65a;
-  -webkit-transition: color .5s linear;
-  transition: color .5s linear;
+  -webkit-transition: color .2s linear;
+  transition: color .2s linear;
 }
 .navigation.active .side-menu {
   left: 0%;
@@ -271,7 +282,7 @@ a {
   display: -ms-flexbox;
   display: flex;
   position: absolute;
-  top: calc(100% - 90px);
+  top: calc(100% - 110px);
   width: 100%;
   height: 100%;
   padding: 2em;
@@ -286,8 +297,8 @@ a {
 }
 .navigation-bottom .bottom-burger:after {
   content: '';
-  width: 2em;
-  height: 2em;
+  width: 3em;
+  height: 3em;
   background-image: url("../img/playlist_ico.svg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -297,10 +308,12 @@ a {
 .navigation-bottom .uppercase {
   text-align: left;
   margin-bottom: 0;
+  line-height: 1.2em;
 }
 .navigation-bottom .song-duration {
   color: #9a9b9b;
   float: right;
+  padding-left: 1em;
   background: white;
 }
 .navigation-bottom .back-button,
@@ -500,7 +513,7 @@ a {
   width: 20%;
   height: 5px;
   top: 50%;
-  background-color: #9a9b9b;
+  background-color: #2a2a2a;
 }
 
 .play .active {
@@ -569,7 +582,6 @@ a {
   z-index: -1;
   background: url("../img/bg_image.jpg");
   background-repeat: no-repeat;
-  background-size: contain;
   background-position: center;
   background-size: cover;
 }
@@ -637,6 +649,7 @@ a {
 .navigation-bottom.active .track-list ol li .item-number {
   color: #9a9b9b;
   background: white;
+  font-size: 18px;
 }
 .navigation-bottom.active .track-list ol li:before {
   float: left;
