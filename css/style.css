@@ -136,7 +136,8 @@ h4 {
   color: white;
   z-index: 2;
   background-color: #0fd65a;
-  border-radius: 1.25em;
+  border-radius: 2em;
+  font-weight: 700;
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
