@@ -23,13 +23,13 @@
 }
 .slide {
     transform: scale(0.7, 0.7);
-    transition: all 1s;
+    transition: transform 1s;
 }
 
 .slide.slick-active,
 .slide.slick-center {
     transform: scale(1.0, 1.0);
-    transition: all 1s;
+    transition: transform 1s;
 }
 
 .slick-current {
