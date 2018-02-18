@@ -34,6 +34,7 @@ h4 {
 .divider {
 	transform: rotate(90deg);
 	margin-bottom: 0.5em;
+	z-index: -1;
 }
 .artist {
 	margin-bottom: 0.5em;

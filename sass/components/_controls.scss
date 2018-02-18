@@ -24,7 +24,9 @@
 		width: 100%;
 	    background: black;
 	    position: relative;
-	    span {
+	    .progress-bar-animation {
+	    	animation-name: loading;
+            animation-timing-function: linear;
 	    	position: absolute;
 	    	display: inline-block;
 	    	transform: translateY(-50%);
@@ -59,4 +61,12 @@
 		width: 8em;
     	height: 8em;
 	}
+}
+@keyframes loading {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
 }

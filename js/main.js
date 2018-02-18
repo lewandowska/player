@@ -27,15 +27,17 @@ jQuery(function ($) {
 		  	prevArrow: $('.previous'),
 		  	nextArrow: $('.next'),
 		});
+	
 	    slider.on('beforeChange', function(event, slick, currentSlide, nextSlide ){
 
-	        var currentVideo = $('.slide').eq(nextSlide).find('audio');
-	        var resetVideoTime = $('.slide').not($('.slide').eq(nextSlide)).find('audio');
-	        currentVideo[0].play();
+	        var currentAudio = $('.slide').eq(nextSlide).find('audio');
+	  
+	        var resetAudioTime = $('.slide').not($('.slide').eq(nextSlide)).find('audio');
+	        currentAudio[0].play();
 
-	        $(resetVideoTime).each(function (index) {
-	            resetVideoTime[index].currentTime = 0;
-	            resetVideoTime[index].pause();
+	        $(resetAudioTime).each(function (index) {
+	            resetAudioTime[index].currentTime = 0;
+	            resetAudioTime[index].pause();
 	        });
 
 	        var audioDuration = $('.slide').eq(nextSlide).find('audio').data("duration");
@@ -43,7 +45,20 @@ jQuery(function ($) {
 	        $('.duration').html(audioDuration);
 	        $('.next-song-title').text(nextSong);
 
-	    })
+	        var currentTime = document.getElementById("current-time");
+
+	        var updateCurrentTime = setInterval(function() {
+	        var loadingAnimationDiv = $('.progress-bar-animation');
+			if (currentAudio[0].duration > 0 && !currentAudio[0].paused) {
+			    let mins = Math.floor(currentAudio[0].currentTime / 60);
+			    let secs = Math.floor(currentAudio[0].currentTime % 60);
+			    if (secs < 10) {
+			        secs = '0' + String(secs);
+			    }
+			    currentTime.innerHTML = mins + ':' + secs;
+			  	}
+				}, 10);
+	    	})
 	};
 	setDataTimeAttr();
 	
@@ -53,26 +68,22 @@ jQuery(function ($) {
 	var playButton = $('.play');
 
 	bottomBurger.click(function () {
-	    var $this = $(this);
-	    $this.parent().toggleClass('active');
+	    $(this).parent().toggleClass('active');
 	});
 
 	burger.click(function () {
-	    var $this = $(this);
-	    $this.parent().toggleClass('active');
+	   	$(this).parent().toggleClass('active');
 	});
 
 
 	backButton .click(function () {
-	    var $this = $(this);
-	    $this.closest('.navigation-bottom').removeClass('active');
+	    $(this).closest('.navigation-bottom').removeClass('active');
 	});
 
 	
 	playButton .click(function () {
-	    var $this = $(this);
 	    var main = $('.app');
-	    $this.toggleClass('active');
+	   	$(this).toggleClass('active');
 	    main.toggleClass('active');
 	});
 
